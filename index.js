@@ -23,18 +23,18 @@ function submitForm() {
   var month = datearray[1];
   var day = datearray[2];
 
-  var monthname = monthNames[parseInt(month) - 1].substring(0, 3).toUpperCase();
+  var monthname = parseInt(month);
   var reportID = day + "" + monthname + "" + year;
   fetchReport(reportID);
 }
 
 const fetchReport = (reportID) => {
   axios
-    .get("https://arpitfrugal.github.io/onelernreport/" + reportID + "/")
+    .get("https://pulugampallavi.github.io/webapp-automation/" + reportID + "/")
     .then((response) => {
       console.log(response);
       window.open(
-        "https://arpitfrugal.github.io/onelernreport/" + reportID + "/"
+        "https://pulugampallavi.github.io/webapp-automation/" + reportID + "/"
       );
     })
     .catch((error) => {
